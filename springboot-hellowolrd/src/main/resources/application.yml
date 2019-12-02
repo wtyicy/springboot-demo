@@ -1,0 +1,14 @@
+server:
+  port: 8001 #配置端口
+  servlet:
+    context-path: /helloworld #配置访问路径
+
+# 热部署
+#（1）File-Settings-Compiler-Build Project automatically
+#（2）ctrl + shift + alt + /,选择Registry,勾上 Compiler autoMake allow when app running
+spring:
+  devtools:
+    restart:
+      enabled: true #热部署生效
+      additional-paths: src/main/java #设置修改重启的目录
+
