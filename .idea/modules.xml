@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/springboot-demo.iml" filepath="$PROJECT_DIR$/springboot-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-hellowolrd/springboot-hellowolrd.iml" filepath="$PROJECT_DIR$/springboot-hellowolrd/springboot-hellowolrd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-mysql/springboot-mysql.iml" filepath="$PROJECT_DIR$/springboot-mysql/springboot-mysql.iml" />
     </modules>
   </component>
 </project>

@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/springboot-hellowolrd/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mysql/pom.xml" />
       </list>
     </option>
   </component>
