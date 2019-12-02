@@ -1,7 +1,8 @@
 # springboot-demo
 springboot集成
 
-2019-12-02 21:11:56 springboot-helloworld 热部署
+2019-12-02 21:11:56 springboot-helloworld 热部署  
+访问路径： http://localhost:8001/helloworld/hello
 ```
 # 热部署
 #（1）File-Settings-Compiler-Build Project automatically
@@ -13,7 +14,9 @@ spring:
       additional-paths: src/main/java #设置修改重启的目录
 ```
 
-2019-12-02 23:21:22 springboot-mysql druid连接池监控
+2019-12-02 23:21:22 springboot-mysql druid连接池监控  
+访问路径： http://localhost:8001/mysql/findUserList  
+Druid Monitor监控路径：http://127.0.0.1:8002/mysql/druid/
 ```
  # 数据库基本配置
   datasource:
