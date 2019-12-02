@@ -1,0 +1,8 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /jdbc
+# 指定当前环境
+spring:
+  profiles:
+    active: dev

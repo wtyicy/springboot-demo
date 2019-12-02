@@ -104,3 +104,5 @@ public class DruidConfiguration {
 }
 ```
 
+java -jar 生成的jar包 --spring.profiles.active=prod
+
