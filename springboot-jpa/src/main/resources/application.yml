@@ -1,0 +1,15 @@
+server:
+  port: 8004
+  servlet:
+    context-path: /jpa
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  jpa:
+    show-sql: true # 是否显示sql
+    hibernate:
+      ddl-auto: update # create每次重新建表 update每次更新
