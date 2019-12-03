@@ -14,7 +14,7 @@ spring:
       additional-paths: src/main/java #设置修改重启的目录
 ```
 
-## 二、2019-12-02 23:21:22 springboot-mysql druid连接池监控  
+## 二、2019-12-02 23:21:22 springboot-mysql druid连接池监控 (准备多数据源) 
 访问路径： http://localhost:8001/mysql/findUserList  
 Druid Monitor监控路径：http://127.0.0.1:8002/mysql/druid/
 ```
@@ -103,6 +103,79 @@ public class DruidConfiguration {
     }
 }
 ```
+## 三、2019-12-03 22:43:44 springboot-jdbc Swagger2接口文档和多环境配置和banner（模糊查询，分页查询）
+运行命令：java -jar 生成的jar包 --spring.profiles.active=prod 
+application.yml
+```
+server:
+  port: 8003
+  servlet:
+    context-path: /jdbc
+# 指定当前环境
+spring:
+  profiles:
+    active: dev
+``` 
+application-dev.yml
+```
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_mysql?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+``` 
+接口文档地址：http://localhost:8003/jdbc/swagger-ui.html
+```
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-java -jar 生成的jar包 --spring.profiles.active=prod
+
+@Configuration
+@EnableSwagger2
+public class Swagger2Configuration {
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("cn.java68.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("使用jdbcTemplate的增删该查")
+                .description("jdbcTemplate写接口")
+                .termsOfServiceUrl("http://www.java68.cn/")
+                .contact("wtyicy")
+                .version("1.0")
+                .build();
+    }
+}
+```
 

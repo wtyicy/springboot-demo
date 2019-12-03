@@ -1,6 +1,7 @@
 package cn.java68.service.impl;
 
 import cn.java68.dao.UserDao;
+import cn.java68.model.User;
 import cn.java68.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<Map<String, Object>> findUserList() {
         return userDao.findUserList();
+    }
+
+    @Override
+    public Integer addUser(User user) {
+        return userDao.addUser(user);
+    }
+
+    @Override
+    public Integer updateUser(User user) {
+        return userDao.updateUser(user);
+    }
+
+    @Override
+    public User getUserById(String id) {
+        return userDao.getUserById(id);
+    }
+
+    @Override
+    public Integer delUser(String id) {
+        return userDao.delUser(id);
     }
 }
