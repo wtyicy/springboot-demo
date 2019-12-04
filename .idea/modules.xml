@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-jpa/jpa.iml" filepath="$PROJECT_DIR$/springboot-jpa/jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-demo.iml" filepath="$PROJECT_DIR$/springboot-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-hellowolrd/springboot-hellowolrd.iml" filepath="$PROJECT_DIR$/springboot-hellowolrd/springboot-hellowolrd.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-jdbc/springboot-jdbc.iml" filepath="$PROJECT_DIR$/springboot-jdbc/springboot-jdbc.iml" />

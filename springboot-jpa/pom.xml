@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.java68</groupId>
-    <artifactId>jpa</artifactId>
+    <artifactId>springboot-jpa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jpa</name>
+    <name>springboot-jpa</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
