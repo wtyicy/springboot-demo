@@ -11,6 +11,7 @@
         <module name="springboot-hellowolrd" />
         <module name="springboot-jpa" />
         <module name="jpa" />
+        <module name="springboot-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="springboot-hellowolrd" target="1.8" />
       <module name="springboot-jdbc" target="1.8" />
       <module name="springboot-jpa" target="1.8" />
+      <module name="springboot-mybatis" target="1.8" />
       <module name="springboot-mysql" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -29,6 +31,7 @@
       <module name="springboot-hellowolrd" options="-parameters" />
       <module name="springboot-jdbc" options="-parameters" />
       <module name="springboot-jpa" options="-parameters" />
+      <module name="springboot-mybatis" options="-parameters" />
       <module name="springboot-mysql" options="-parameters" />
     </option>
   </component>
