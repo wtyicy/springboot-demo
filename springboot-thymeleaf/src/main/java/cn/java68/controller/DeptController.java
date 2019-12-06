@@ -8,6 +8,7 @@ import cn.java68.service.IDeptService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,6 +34,7 @@ public class DeptController {
     @RequestMapping(value = "/addDept", method = RequestMethod.POST)
     @ResponseBody
     public Result addDept(Dept dept){
+        dept.setId("787886");
         return ResultUtil.successWithData(deptService.addDept(dept), BaseEnums.SUCCESS.code(),BaseEnums.SUCCESS.desc());
     }
 

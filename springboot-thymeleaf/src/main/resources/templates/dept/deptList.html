@@ -28,7 +28,37 @@
         </ol>
     </nav>
     <div style="margin-bottom: 6px;float: right">
-        <button type="button" class="btn btn-primary btn-sm">添加</button>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >添加</button>
+    </div>
+    <!--弹出框-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">添加部门</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+<!--                        <div class="form-group">-->
+<!--                            ID：<input type="text" class="form-control" name="id" v-model="dept.id">-->
+<!--                        </div>-->
+                        <div class="form-group">
+                            父节点ID：<input type="text" class="form-control" name="parentId" v-model="dept.parentId">
+                        </div>
+                        <div class="form-group">
+                            部门名字：<input type="text" class="form-control" name="name" v-model="dept.name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">返回</button>
+                    <button type="submit" @click="if(dept.id == undefined){addDept(dept)}else{updateDept(dept)}" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
     </div>
     <table class="table">
         <thead>
@@ -41,13 +71,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="dept in deptList">
-            <th scope="row">1</th>
+        <tr v-for="(dept,index) in deptList">
+            <th scope="row">{{index+1}}</th>
             <td>{{dept.id}}</td>
             <td>{{dept.parentId}}</td>
             <td>{{dept.name}}</td>
             <td>
-                <button type="button" class="btn btn-warning btn-sm" href="">修改</button>
+                <button type="button" class="btn btn-warning btn-sm" @click="getDeptById(dept.id)">修改</button>
                 <button type="button" class="btn btn-danger btn-sm"
                         @click="if(confirm('确认删除该部门吗？')==false){return false;}else{delDept(dept.id)}">删除
                 </button>
@@ -79,6 +109,11 @@
             el: '#app',
             data: {
                 deptList: [],
+                dept: {
+                }
+            },
+            created() { //当vm实例的data和methods 初始化完毕后，vm实例会自动执行这个方法
+                this.findDeptList();
             },
             methods: {
                 findDeptList: function () {
@@ -92,9 +127,36 @@
                 delDept: function (id) {
                     //发送DELETE请求
                     this.$http.delete('./delDept?id=' + id).then(function (res) {
-                        this.deptList = res.data.data;
+                        this.findDeptList();
                     }, function (res) {
                         alert("删除部门数据失败");
+                    });
+                },
+                getDeptById: function (id) {
+                    //发送DELETE请求
+                    this.$http.get('./getDeptById?id=' + id).then(function (res) {
+                        this.dept = res.data.data
+                        $('#exampleModal').modal('show');
+                    }, function (res) {
+                        alert("删除部门数据失败");
+                    });
+                },
+                addDept: function (dept) {
+                    //发送POST请求
+                    this.$http.post('./addDept',{'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
+                        $('#exampleModal').modal('hide');
+                        this.findDeptList();
+                    }, function (res) {
+                        alert("添加部门数据失败");
+                    });
+                },
+                updateDept: function (dept) {
+                    //发送POST请求
+                    this.$http.put('./updateDept',{'id':dept.id,'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
+                        $('#exampleModal').modal('hide');
+                        this.findDeptList();
+                    }, function (res) {
+                        alert("更新部门数据失败");
                     });
                 }
             }
