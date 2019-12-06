@@ -1,0 +1,30 @@
+server:
+  port: 8006
+  servlet:
+    context-path: /redis
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml # 指定mybatis配置文件
+  mapper-locations: classpath*:/mappers/*.xml # 指定mapper文件
+  type-aliases-package: cn.java68 # 指定pojo
+
+logging:
+  level:
+    root: INFO
+    #WARN、DEBUG、INFO;DEBUG: 设置为DEBUG会打印SQL语句
+    cn.java68: DEBUG
+#    org.springframework.web: DEBUG
+#    org.hibernate: DEBUG
+  file:
+    path: D:\springboot-redis-log
