@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.09 (64 bit)
-MySQL - 5.7.27-log : Database - springboot_mysql
+MySQL - 5.7.28-log : Database - springboot_mysql
 *********************************************************************
 */
 
@@ -15,6 +15,31 @@ MySQL - 5.7.27-log : Database - springboot_mysql
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`springboot_mysql` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE `springboot_mysql`;
+
+/*Table structure for table `t_dept` */
+
+DROP TABLE IF EXISTS `t_dept`;
+
+CREATE TABLE `t_dept` (
+  `id` varchar(128) NOT NULL,
+  `parent_id` varchar(128) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_dept` */
+
+/*Table structure for table `t_role` */
+
+DROP TABLE IF EXISTS `t_role`;
+
+CREATE TABLE `t_role` (
+  `id` varchar(128) NOT NULL,
+  `role_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_role` */
 
 /*Table structure for table `t_user` */
 
