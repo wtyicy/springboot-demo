@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>部门管理</title>
+    <!--引入jQuery-->
+    <script src="./jquery-3.4.1/jquery-3.4.1.js"></script>
+    <!--引入bootStrap-->
+    <link rel="stylesheet" type="text/css" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-4.3.1-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-4.3.1-dist/css/bootstrap-reboot.css">
+    <script src="./bootstrap-4.3.1-dist/js/bootstrap.bundle.js"></script>
+    <script src="./bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <!--引入vue-->
+    <script src="./vue-2.6.10/vue.min.js"></script>
+    <!--引入vue-resource 网络请求-->
+    <script src="./vue-resource-1.5.1/vue-resource.js"></script>
+    <style>
+    </style>
+
+</head>
+<body>
+<div class="container" id="app">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">主页</a></li>
+            <li class="breadcrumb-item active" aria-current="page" @click="findDeptList()">部门管理</li>
+        </ol>
+    </nav>
+    <div style="margin-bottom: 6px;float: right">
+        <button type="button" class="btn btn-primary btn-sm">添加</button>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">序号</th>
+            <th scope="col">部门ID</th>
+            <th scope="col">部门父ID</th>
+            <th scope="col">部门名称</th>
+            <th scope="col">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="dept in deptList">
+            <th scope="row">1</th>
+            <td>{{dept.id}}</td>
+            <td>{{dept.parentId}}</td>
+            <td>{{dept.name}}</td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" href="">修改</button>
+                <button type="button" class="btn btn-danger btn-sm"
+                        @click="if(confirm('确认删除该部门吗？')==false){return false;}else{delDept(dept.id)}">删除
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<script>
+    $(document).ready(function () {
+        new Vue({
+            el: '#app',
+            data: {
+                deptList: [],
+            },
+            methods: {
+                findDeptList: function () {
+                    //发送get请求
+                    this.$http.get('./findDeptList').then(function (res) {
+                        this.deptList = res.data.data;
+                    }, function (res) {
+                        alert("获取部门列表数据失败");
+                    });
+                },
+                delDept: function (id) {
+                    //发送DELETE请求
+                    this.$http.delete('./delDept?id=' + id).then(function (res) {
+                        this.deptList = res.data.data;
+                    }, function (res) {
+                        alert("删除部门数据失败");
+                    });
+                }
+            }
+        });
+    })
+
+
+</script>
+</body>
+</html>

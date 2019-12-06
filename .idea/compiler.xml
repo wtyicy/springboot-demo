@@ -10,6 +10,7 @@
         <module name="springboot-mysql" />
         <module name="springboot-hellowolrd" />
         <module name="springboot-jpa" />
+        <module name="springboot-thymeleaf" />
         <module name="springboot-redis" />
         <module name="jpa" />
         <module name="springboot-mybatis" />
@@ -24,6 +25,7 @@
       <module name="springboot-mybatis" target="1.8" />
       <module name="springboot-mysql" target="1.8" />
       <module name="springboot-redis" target="1.8" />
+      <module name="springboot-thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -36,6 +38,7 @@
       <module name="springboot-mybatis" options="-parameters" />
       <module name="springboot-mysql" options="-parameters" />
       <module name="springboot-redis" options="-parameters" />
+      <module name="springboot-thymeleaf" options="-parameters" />
     </option>
   </component>
 </project>
