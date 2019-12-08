@@ -275,6 +275,15 @@ logging:
 ```
 
 ## 2019-12-08 9:51:45 springboot-thymeleaf 使用vue，bootstrap，增删改查，添加事务，添加拦截器
+```
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+```
 
 
 

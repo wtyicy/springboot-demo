@@ -120,12 +120,12 @@
                 }
             },
             created() { //当vm实例的data和methods 初始化完毕后，vm实例会自动执行这个方法
-
-                // this.findDeptList(dept);
+                 this.findDeptList('');
             },
+
             methods: {
                 findDeptList: function (dept) {
-                    //发送get请求
+                    //发送post请求
                     this.$http.post('./findDeptList',{'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         this.deptList = res.data.data;
                     }, function (res) {
@@ -135,13 +135,13 @@
                 delDept: function (id) {
                     //发送DELETE请求
                     this.$http.delete('./delDept?id=' + id).then(function (res) {
-                        this.findDeptList();
+                        this.findDeptList('');
                     }, function (res) {
                         alert("删除部门数据失败");
                     });
                 },
                 getDeptById: function (id) {
-                    //发送DELETE请求
+                    //发送get请求
                     this.$http.get('./getDeptById?id=' + id).then(function (res) {
                         this.dept = res.data.data
                         $('#exampleModal').modal('show');
@@ -154,17 +154,17 @@
                     this.$http.post('./addDept',{'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         $('#exampleModal').modal('hide');
                         this.dept = {};
-                        this.findDeptList();
+                        this.findDeptList('');
                     }, function (res) {
                         alert("添加部门数据失败");
                     });
                 },
                 updateDept: function (dept) {
-                    //发送POST请求
+                    //发送put请求
                     this.$http.put('./updateDept',{'id':dept.id,'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         $('#exampleModal').modal('hide');
                         this.dept={};
-                        this.findDeptList();
+                        this.findDeptList('');
                     }, function (res) {
                         alert("更新部门数据失败");
                     });

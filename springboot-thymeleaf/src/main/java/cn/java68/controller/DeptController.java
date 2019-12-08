@@ -28,6 +28,9 @@ public class DeptController {
     @RequestMapping(value = "/findDeptList", method = RequestMethod.POST)
     @ResponseBody
     public Result findDeptList(Dept dept){
+        if (dept.getName().equals("undefined")){
+            dept.setName("");
+        }
         return ResultUtil.successWithData(deptService.findDeptList(dept), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 
