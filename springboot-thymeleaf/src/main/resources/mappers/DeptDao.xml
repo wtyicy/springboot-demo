@@ -16,11 +16,16 @@
 		FROM t_dept a
 		WHERE a.id = #{id}
 	</select>
-	
+
 	<select id="findDeptList" resultType="Dept">
 		SELECT
-			<include refid="deptColumns"/>
+		<include refid="deptColumns"/>
 		FROM t_dept a
+		<where>
+			<if test="name != null and name != ''">
+				a.name like concat('%',#{name},'%')
+			</if>
+		</where>
 	</select>
 	
 

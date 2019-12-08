@@ -11,11 +11,13 @@ import cn.java68.service.impl.RoleServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 @Api(value = "/role",tags = "角色管理")
 @RequestMapping
@@ -35,7 +37,10 @@ public class RoleController {
     @ApiOperation(value = "添加角色",notes = "添加角色")
     @RequestMapping(value = "/addRole", method = RequestMethod.POST)
     @ResponseBody
-    public Result addRole(Role role){
+    public Result addRole(@Valid Role role, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return ResultUtil.successWithData(bindingResult.getFieldError().getDefaultMessage(), BaseEnums.SUCCESS.code(),BaseEnums.SUCCESS.desc());
+        }
         return ResultUtil.successWithData(roleService.addRole(role), BaseEnums.SUCCESS.code(),BaseEnums.SUCCESS.desc());
     }
 

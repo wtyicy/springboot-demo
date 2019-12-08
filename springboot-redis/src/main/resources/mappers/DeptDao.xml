@@ -17,9 +17,9 @@
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findDeptList" resultType="Dept">
+	<select id="findDeptList" resultType="Dept" parameterType="cn.java68.model.Dept">
 		SELECT
-			<include refid="deptColumns"/>
+			 <include refid="deptColumns"/>
 		FROM t_dept a
 	</select>
 	

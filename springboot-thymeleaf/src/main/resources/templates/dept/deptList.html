@@ -27,9 +27,15 @@
             <li class="breadcrumb-item active" aria-current="page" @click="findDeptList()">部门管理</li>
         </ol>
     </nav>
-    <div style="margin-bottom: 6px;float: right">
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >添加</button>
+    <div style="margin-bottom: 6px;">
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加</button>
     </div>
+    <form>
+        <div class="form-group">
+            部门名字：<input type="text" name="name" v-model="dept.name">
+            <button type="submit" @click="findDeptList(dept)" class="btn btn-primary btn-sm">搜索</button>
+        </div>
+    </form>
     <!--弹出框-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -45,6 +51,7 @@
 <!--                        <div class="form-group">-->
 <!--                            ID：<input type="text" class="form-control" name="id" v-model="dept.id">-->
 <!--                        </div>-->
+                        <input type="text" class="form-control" name="id" v-model="dept.id" hidden="true">
                         <div class="form-group">
                             父节点ID：<input type="text" class="form-control" name="parentId" v-model="dept.parentId">
                         </div>
@@ -113,12 +120,13 @@
                 }
             },
             created() { //当vm实例的data和methods 初始化完毕后，vm实例会自动执行这个方法
-                this.findDeptList();
+
+                // this.findDeptList(dept);
             },
             methods: {
-                findDeptList: function () {
+                findDeptList: function (dept) {
                     //发送get请求
-                    this.$http.get('./findDeptList').then(function (res) {
+                    this.$http.post('./findDeptList',{'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         this.deptList = res.data.data;
                     }, function (res) {
                         alert("获取部门列表数据失败");
@@ -145,6 +153,7 @@
                     //发送POST请求
                     this.$http.post('./addDept',{'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         $('#exampleModal').modal('hide');
+                        this.dept = {};
                         this.findDeptList();
                     }, function (res) {
                         alert("添加部门数据失败");
@@ -154,6 +163,7 @@
                     //发送POST请求
                     this.$http.put('./updateDept',{'id':dept.id,'parentId':dept.parentId,'name':dept.name},{ emulateJSON: true }).then(function (res) {
                         $('#exampleModal').modal('hide');
+                        this.dept={};
                         this.findDeptList();
                     }, function (res) {
                         alert("更新部门数据失败");

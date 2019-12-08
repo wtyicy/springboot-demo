@@ -3,7 +3,9 @@ package cn.java68.service.impl;
 import cn.java68.dao.IDeptDao;
 import cn.java68.model.Dept;
 import cn.java68.service.IDeptService;
+import jdk.internal.org.objectweb.asm.util.TraceClassVisitor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,11 +18,12 @@ public class DeptServiceImpl implements IDeptService {
 
 
     @Override
-    public List<Dept> findDeptList() {
-        return deptDao.findDeptList();
+    public List<Dept> findDeptList(Dept dept) {
+        return deptDao.findDeptList(dept);
     }
 
     @Override
+    @Transactional
     public Integer addDept(Dept dept) {
         return deptDao.addDept(dept);
     }

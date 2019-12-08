@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IDeptService {
 
-    List<Dept> findDeptList();
+    List<Dept> findDeptList(Dept dept);
 
     Integer addDept(Dept dept);
 

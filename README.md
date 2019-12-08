@@ -178,7 +178,7 @@ public class Swagger2Configuration {
     }
 }
 ```
-## 四、2019-12-04 01:05:11 springboot-jpa 角色的增删改查
+## 四、2019-12-04 01:05:11 springboot-jpa 角色的增删改查 加上表单验证
 ```
   jpa:
     show-sql: true # 是否显示sql
@@ -273,6 +273,8 @@ logging:
         min-idle: 0 # 连接池最小空闲连接
 
 ```
+
+## 2019-12-08 9:51:45 springboot-thymeleaf 使用vue，bootstrap，增删改查，添加事务，添加拦截器
 
 
 

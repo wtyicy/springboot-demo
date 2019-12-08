@@ -8,6 +8,7 @@ import cn.java68.service.IDeptService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,10 +25,10 @@ public class DeptController {
     private IDeptService deptService;
 
     @ApiOperation(value = "获取部门列表",notes = "获取部门列表")
-    @RequestMapping(value = "/findDeptList", method = RequestMethod.GET)
+    @RequestMapping(value = "/findDeptList", method = RequestMethod.POST)
     @ResponseBody
-    public Result findDeptList(){
-        return ResultUtil.successWithData(deptService.findDeptList(), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
+    public Result findDeptList(Dept dept){
+        return ResultUtil.successWithData(deptService.findDeptList(dept), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 
     @ApiOperation(value = "添加部门",notes = "添加部门")

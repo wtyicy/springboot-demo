@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface IDeptDao {
 
-    List<Dept> findDeptList();
+    List<Dept> findDeptList(Dept dept);
 
     Integer addDept(Dept dept);
 

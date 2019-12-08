@@ -34,6 +34,6 @@ logging:
 #    org.springframework.web: DEBUG
 #    org.hibernate: DEBUG
   file:
-    path: D:\springboot-redis-log
+    path: D:\springboot-tymeleaf-log
 
 
