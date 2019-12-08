@@ -2,13 +2,15 @@ package cn.java68.dao;
 
 
 import cn.java68.model.User;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
-public interface UserDao {
+@Mapper
+public interface IUserDao {
 
-    List<Map<String, Object>> findUserList();
+    List<User> findUserList(User user);
 
     Integer addUser(User user);
 

@@ -1,18 +1,19 @@
 package cn.java68.service;
 
+import cn.java68.model.Dept;
 import cn.java68.model.Role;
 
 import java.util.List;
 
 public interface IRoleService {
 
-    List<Role> findRoleList();
+    List<Role> findRoleList(Role role);
 
-    Role addRole(Role role);
+    Integer addRole(Role role);
 
-    Role updateRole(Role role);
+    Integer updateRole(Role role);
 
-    Role getRoleById(Integer id);
+    Role getRoleById(String id);
 
     void delRole(String id);
 }

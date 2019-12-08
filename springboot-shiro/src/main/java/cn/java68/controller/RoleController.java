@@ -27,8 +27,8 @@ public class RoleController {
     @ApiOperation(value = "获取角色列表",notes = "获取角色列表")
     @RequestMapping(value = "/findRoleList", method = RequestMethod.GET)
     @ResponseBody
-    public Result findRoleList(){
-        return ResultUtil.successWithData(roleService.findRoleList(), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
+    public Result findRoleList(Role role){
+        return ResultUtil.successWithData(roleService.findRoleList(role), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 
     @ApiOperation(value = "添加角色",notes = "添加角色")
@@ -51,7 +51,7 @@ public class RoleController {
     @ApiOperation(value = "根据ID获取角色",notes = "根据ID获取角色")
     @RequestMapping(value = "/getRoleById", method = RequestMethod.GET)
     @ResponseBody
-    public Result getRoleById(Integer id){
+    public Result getRoleById(String id){
         return ResultUtil.successWithData(roleService.getRoleById(id),BaseEnums.SUCCESS.code(),BaseEnums.SUCCESS.desc());
     }
 

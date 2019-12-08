@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java68.dao.IUserDao">
+    
+	<sql id="deptColumns">
+		a.id AS id,
+		a.user_name AS userName,
+		a.password AS password
+	</sql>
+	
+
+	<select id="getUserById" resultType="User">
+		SELECT
+			<include refid="deptColumns"/>
+		FROM t_user a
+		WHERE a.id = #{id}
+	</select>
+
+	<select id="findUserList" resultType="User">
+		SELECT
+		<include refid="deptColumns"/>
+		FROM t_user a
+		<where>
+			<if test="userName != null and userName != ''">
+				a.user_name like concat('%',#{userName},'%')
+			</if>
+		</where>
+	</select>
+	
+
+	<insert id="addUser">
+		INSERT INTO t_user(
+			id, 
+			user_name,
+			password
+		) VALUES (
+			#{id}, 
+			#{userName},
+			#{password}
+		)
+	</insert>
+	
+	<update id="updateUser">
+		UPDATE t_user SET
+			user_name = #{userName},
+			password = #{password}
+		WHERE id = #{id}
+	</update>
+
+	<update id="delUser">
+		DELETE FROM t_user
+		WHERE id = #{id}
+	</update>
+
+</mapper>

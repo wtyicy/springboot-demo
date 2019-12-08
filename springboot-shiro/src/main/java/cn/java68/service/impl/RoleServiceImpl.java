@@ -15,27 +15,27 @@ public class RoleServiceImpl implements IRoleService {
     private IRoleDao roleDao;
 
     @Override
-    public List<Role> findRoleList() {
-        return roleDao.findAll();
+    public List<Role> findRoleList(Role role) {
+        return roleDao.findRoleList(role);
     }
 
     @Override
-    public Role addRole(Role role) {
-        return roleDao.save(role);
+    public Integer addRole(Role role) {
+        return roleDao.addRole(role);
     }
 
     @Override
-    public Role updateRole(Role role) {
-        return roleDao.save(role);
+    public Integer updateRole(Role role) {
+        return roleDao.updateRole(role);
     }
 
     @Override
-    public Role getRoleById(Integer id) {
-        return roleDao.findById(Integer.valueOf(id)).get();
+    public Role getRoleById(String id) {
+        return roleDao.getRoleById(id);
     }
 
     @Override
     public void delRole(String id) {
-        roleDao.deleteById(Integer.valueOf(id));
+        roleDao.delRole(id);
     }
 }
