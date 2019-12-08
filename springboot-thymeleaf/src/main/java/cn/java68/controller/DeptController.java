@@ -6,6 +6,7 @@ import cn.java68.base.result.ResultUtil;
 import cn.java68.model.Dept;
 import cn.java68.service.IDeptService;
 import cn.java68.util.IdUtils;
+import cn.java68.util.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Api(value = "/dept",tags = "部门管理")
 @RequestMapping
 @Controller
 public class DeptController {
+
 
     @Resource
     private IDeptService deptService;
@@ -32,6 +35,7 @@ public class DeptController {
         if (dept.getName().equals("undefined")){
             dept.setName("");
         }
+
         return ResultUtil.successWithData(deptService.findDeptList(dept), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 

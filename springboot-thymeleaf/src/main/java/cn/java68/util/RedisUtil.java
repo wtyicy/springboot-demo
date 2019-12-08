@@ -16,7 +16,6 @@ public final class RedisUtil {
 
 
     @Autowired
-
     private RedisTemplate<String, Object> redisTemplate;
 
 
