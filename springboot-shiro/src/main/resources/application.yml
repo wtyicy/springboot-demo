@@ -1,0 +1,38 @@
+server:
+  port: 8008
+  servlet:
+    context-path: /shiro
+spring:
+  profiles:
+    active: dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java,src/main/resources
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath*:/mappers/*.xml
+  type-aliases-package: cn.java68
+
+logging:
+  level:
+    root: INFO
+    cn.java68: DEBUG
+#    org.springframework.web: DEBUG
+#    org.hibernate: DEBUG
+  file:
+    path: D:\springboot-tymeleaf-log
+
+
