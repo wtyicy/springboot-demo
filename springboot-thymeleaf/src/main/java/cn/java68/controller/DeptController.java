@@ -5,6 +5,7 @@ import cn.java68.base.result.Result;
 import cn.java68.base.result.ResultUtil;
 import cn.java68.model.Dept;
 import cn.java68.service.IDeptService;
+import cn.java68.util.IdUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,7 @@ public class DeptController {
     @RequestMapping(value = "/addDept", method = RequestMethod.POST)
     @ResponseBody
     public Result addDept(Dept dept){
-        dept.setId("787886");
+        dept.setId(IdUtils.getRandomIdByUUID());
         return ResultUtil.successWithData(deptService.addDept(dept), BaseEnums.SUCCESS.code(),BaseEnums.SUCCESS.desc());
     }
 

@@ -30,12 +30,12 @@
     <div style="margin-bottom: 6px;">
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加</button>
     </div>
-    <form>
-        <div class="form-group">
-            部门名字：<input type="text" name="name" v-model="dept.name">
-            <button type="submit" @click="findDeptList(dept)" class="btn btn-primary btn-sm">搜索</button>
-        </div>
-    </form>
+<!--    <form>-->
+<!--        <div class="form-group">-->
+<!--            部门名字：<input type="text" name="name" v-model="dept.name">-->
+<!--            <button type="submit" @click="findDeptList(dept)" class="btn btn-primary btn-sm">搜索</button>-->
+<!--        </div>-->
+<!--    </form>-->
     <!--弹出框-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -92,7 +92,7 @@
         </tr>
         </tbody>
     </table>
-    <nav aria-label="Page navigation example">
+    <!--<nav aria-label="Page navigation example">
         <ul class="pagination justify-content-end">
             <li class="page-item disabled">
                 <a class="page-link" href="#" aria-label="Previous">
@@ -108,7 +108,7 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
 </div>
 <script>
     $(document).ready(function () {
