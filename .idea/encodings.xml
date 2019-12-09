@@ -30,6 +30,7 @@
     <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-test.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/sql/springboot_shiro.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/static/img/login_back.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-dev.yml" charset="GBK" />

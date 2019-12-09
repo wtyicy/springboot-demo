@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 
 @Api(value = "/user",tags = "用户管理")
-@RequestMapping
 @Controller
 public class UserController {
 
@@ -72,15 +71,20 @@ public class UserController {
         return ResultUtil.successWithData(userService.getUserByName(name),BaseEnums.SUCCESS.desc());
     }
 
+    /**
+     * 登录界面
+     * @return
+     */
+    @RequestMapping("/loginView")
+    public String loginView() {
+        return "login";
+    }
+
     @RequestMapping("/login")
-    @ResponseBody
     public String login(User user) {
         //添加用户认证信息
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(
-                user.getUserName(),
-                user.getPassword()
-        );
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUserName(), user.getPassword());
         try {
             //进行验证，这里可以捕获异常，然后返回对应信息
             subject.login(usernamePasswordToken);
@@ -93,13 +97,12 @@ public class UserController {
             e.printStackTrace();
             return "没有权限";
         }
-        return "login success";
+        return "dept/deptList";
     }
     //注解验角色和权限
-    @RequiresRoles("admin")
     @RequiresPermissions("add")
     @RequestMapping("/index")
     public String index() {
-        return "index!";
+        return "dept/deptList";
     }
 }
