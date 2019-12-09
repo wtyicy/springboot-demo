@@ -6,15 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot-mybatis" />
         <module name="springboot-jdbc" />
         <module name="springboot-mysql" />
         <module name="springboot-hellowolrd" />
         <module name="springboot-jpa" />
-        <module name="springboot-shiro" />
         <module name="springboot-thymeleaf" />
         <module name="springboot-redis" />
+        <module name="springboot-shiro" />
         <module name="jpa" />
-        <module name="springboot-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -29,6 +29,20 @@ CREATE TABLE `t_dept` (
 
 /*Data for the table `t_dept` */
 
+insert  into `t_dept`(`id`,`parent_id`,`name`) values ('2','3','哈哈');
+
+/*Table structure for table `t_permission` */
+
+DROP TABLE IF EXISTS `t_permission`;
+
+CREATE TABLE `t_permission` (
+  `id` varchar(128) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_permission` */
+
 /*Table structure for table `t_role` */
 
 DROP TABLE IF EXISTS `t_role`;
@@ -41,6 +55,8 @@ CREATE TABLE `t_role` (
 
 /*Data for the table `t_role` */
 
+insert  into `t_role`(`id`,`role_name`) values ('1','测试'),('2','工程');
+
 /*Table structure for table `t_user` */
 
 DROP TABLE IF EXISTS `t_user`;
@@ -48,15 +64,13 @@ DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
   `id` varchar(128) NOT NULL,
   `user_name` varchar(255) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
-  `birthday` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_user` */
 
-insert  into `t_user`(`id`,`user_name`,`age`,`birthday`,`password`) values ('1','wty',20,'1997-11-24','123456');
+insert  into `t_user`(`id`,`user_name`,`password`) values ('1','wty','123456'),('2','王','123456');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
