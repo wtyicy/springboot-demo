@@ -32,7 +32,7 @@ public class DeptController {
     @RequestMapping(value = "/findDeptList", method = RequestMethod.POST)
     @ResponseBody
     public Result findDeptList(Dept dept){
-        if (dept.getName().equals("undefined")){
+         if ("undefined".equals(dept.getName())){
             dept.setName("");
         }
 

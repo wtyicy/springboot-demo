@@ -36,6 +36,7 @@
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-dev.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-prod.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/static/axios/axios.min.js" charset="GBK" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

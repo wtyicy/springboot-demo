@@ -15,8 +15,10 @@
     <script src="./vue-2.6.10/vue.min.js"></script>
     <!--引入vue-resource 网络请求-->
     <script src="./vue-resource-1.5.1/vue-resource.js"></script>
+    <script src="./axios/axios.min.js"></script>
     <style>
     </style>
+
 
 </head>
 <body>
@@ -124,13 +126,25 @@
             },
 
             methods: {
+                // findDeptList: function (dept) {
+                //     //发送post请求
+                //     this.$http.post('./findDeptList',{'name':dept.name},{ emulateJSON: true }).then(function (res) {
+                //         this.deptList = res.data.data;
+                //     }, function (res) {
+                //         alert("获取部门列表数据失败");
+                //     });
+                // },
+                /*post请求*/
                 findDeptList: function (dept) {
-                    //发送post请求
-                    this.$http.post('./findDeptList',{'name':dept.name},{ emulateJSON: true }).then(function (res) {
-                        this.deptList = res.data.data;
-                    }, function (res) {
-                        alert("获取部门列表数据失败");
-                    });
+                    let _this = this;
+                    axios.post('http://localhost:8007/thymeleaf/findDeptList',{"name":dept.name},{ emulateJSON: true })
+                        .then(function(res){
+                            _this.deptList = res.data.data;
+                            console.log(res);
+                        })
+                        .catch(function(err){
+                            console.log(err);
+                        });
                 },
                 delDept: function (id) {
                     //发送DELETE请求

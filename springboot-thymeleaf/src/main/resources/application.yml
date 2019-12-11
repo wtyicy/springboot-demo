@@ -22,17 +22,14 @@ spring:
     suffix: .html
 
 mybatis:
-  config-location: classpath:/mybatis/mybatis-config.xml # 指定mybatis配置文件
-  mapper-locations: classpath*:/mappers/*.xml # 指定mapper文件
-  type-aliases-package: cn.java68 # 指定pojo
+  config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath*:/mappers/*.xml
+  type-aliases-package: cn.java68
 
 logging:
   level:
     root: INFO
-    #WARN、DEBUG、INFO;DEBUG: 设置为DEBUG会打印SQL语句
     cn.java68: DEBUG
-#    org.springframework.web: DEBUG
-#    org.hibernate: DEBUG
   file:
     path: D:\springboot-tymeleaf-log
 
