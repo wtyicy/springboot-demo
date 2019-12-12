@@ -1,6 +1,6 @@
 package cn.java68.service.impl;
 
-import cn.java68.dao.IDeptDao;
+import cn.java68.mapper.IDeptDao;
 import cn.java68.model.Dept;
 import cn.java68.service.IDeptService;
 import org.springframework.stereotype.Service;

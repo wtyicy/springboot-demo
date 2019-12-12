@@ -1,6 +1,6 @@
 package cn.java68.service.impl;
 
-import cn.java68.dao.UserDao;
+import cn.java68.mapper.UserDao;
 import cn.java68.service.UserService;
 import org.springframework.stereotype.Service;
 
