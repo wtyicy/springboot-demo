@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
 
-
 @CrossOrigin
 @Api(value = "/dept",tags = "部门管理")
 @RequestMapping
@@ -30,11 +29,12 @@ public class DeptController {
     @ApiOperation(value = "获取部门列表",notes = "获取部门列表")
     @RequestMapping(value = "/findDeptList", method = RequestMethod.POST)
     @ResponseBody
-    public Result findDeptList( Dept dept){
-         if ("undefined".equals(dept.getName())){
-            dept.setName("");
-        }
-
+    public Result findDeptList(@RequestBody Dept dept){
+//         if ("undefined".equals(dept.getName())){
+//            dept.setName("");
+//        }
+//        Dept dept = new Dept();
+//        dept.setName(name);
         return ResultUtil.successWithData(deptService.findDeptList(dept), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 

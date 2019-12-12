@@ -27,6 +27,8 @@ public enum BaseEnums implements BaseEnum<String, String> {
 
     VERSION_NOT_MATCH("record_not_exists_or_version_not_match", "记录版本不存在或不匹配"),
 
+    USER_LOGIN_FAIL("USER_LOGIN_FAIL", "用户名或密码错误"),
+
     PARAMETER_NOT_NULL("parameter_not_be_null", "参数不能为空");
 
     private String code;

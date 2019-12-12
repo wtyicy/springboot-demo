@@ -23,12 +23,12 @@ public class DeptServiceImpl implements IDeptService {
 
     @Override
     public List<Dept> findDeptList(Dept dept) {
-//        List<Dept> deptList = (List<Dept>) redisUtil.get("deptList");
-//        if (deptList == null){
-        List<Dept>   deptList = deptDao.findDeptList(dept);
+        List<Dept> deptList = (List<Dept>) redisUtil.get("deptList");
+        if (deptList == null){
+        deptList = deptDao.findDeptList(dept);
 
-//            redisUtil.set("deptList",deptList,60);
-//        }
+            redisUtil.set("deptList",deptList,60);
+        }
 
         return deptList;
     }
