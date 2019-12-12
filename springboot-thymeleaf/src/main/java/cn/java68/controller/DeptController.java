@@ -11,14 +11,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@CrossOrigin
 @Api(value = "/dept",tags = "部门管理")
 @RequestMapping
 @Controller
@@ -31,11 +29,12 @@ public class DeptController {
     @ApiOperation(value = "获取部门列表",notes = "获取部门列表")
     @RequestMapping(value = "/findDeptList", method = RequestMethod.POST)
     @ResponseBody
-    public Result findDeptList(Dept dept){
-         if ("undefined".equals(dept.getName())){
-            dept.setName("");
-        }
-
+    public Result findDeptList(@RequestBody Dept dept){
+//         if ("undefined".equals(dept.getName())){
+//            dept.setName("");
+//        }
+//        Dept dept = new Dept();
+//        dept.setName(name);
         return ResultUtil.successWithData(deptService.findDeptList(dept), BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
     }
 

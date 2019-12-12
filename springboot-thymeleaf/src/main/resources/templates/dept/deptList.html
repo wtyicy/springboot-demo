@@ -124,7 +124,6 @@
             created() { //当vm实例的data和methods 初始化完毕后，vm实例会自动执行这个方法
                  this.findDeptList('');
             },
-
             methods: {
                 // findDeptList: function (dept) {
                 //     //发送post请求
@@ -137,7 +136,7 @@
                 /*post请求*/
                 findDeptList: function (dept) {
                     let _this = this;
-                    axios.post('http://localhost:8007/thymeleaf/findDeptList',{"name":dept.name},{ emulateJSON: true })
+                    axios.post('./findDeptList',{"name":56},{ emulateJSON: true })
                         .then(function(res){
                             _this.deptList = res.data.data;
                             console.log(res);
