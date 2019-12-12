@@ -137,7 +137,7 @@
                 /*post请求*/
                 findDeptList: function (dept) {
                     let _this = this;
-                    axios.post('http://localhost:8007/thymeleaf/findDeptList',{"name":dept.name},{ emulateJSON: true })
+                    axios.post('./findDeptList',{"name":dept.name},{ emulateJSON: true })
                         .then(function(res){
                             _this.deptList = res.data.data;
                             console.log(res);
