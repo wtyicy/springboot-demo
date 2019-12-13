@@ -11,6 +11,11 @@ import java.util.Map;
  */
 public enum BaseEnums implements BaseEnum<String, String> {
 
+    //登录系列
+    NOT_USER("500","用户名或密码为空"),
+    LOGIN_FAIL("500","用户名或密码错误"),
+    LOGIN_SUCCESS("200","登录成功"),
+
     SUCCESS("request.success", "请求成功"),
 
     FAILURE("request.failure", "请求失败"),

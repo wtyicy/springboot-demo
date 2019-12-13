@@ -2,6 +2,9 @@ package cn.java68.model;
 
 import lombok.Data;
 
+/**
+ * 部门表
+ */
 @Data
 public class SysDept {
 

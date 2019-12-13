@@ -3,5 +3,31 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.java68.mapper.SysUserMapper">
-
+    <select id="findUser" resultType="cn.java68.model.SysUser">
+        SELECT
+            u.user_id as userId,
+            u.user_name as userName,
+            u.password as password,
+            u.salt as salt,
+            u.dept_id as deptId
+         FROM sys_user as u
+         <where>
+                1=1
+             <if test="userId != null and userId != ''">
+                AND u.user_id = #{userId}
+             </if>
+             <if test="userName != null and userName != ''">
+                 AND u.user_name = #{userName}
+             </if>
+             <if test="password != null and password != ''">
+                 AND u.password = #{password}
+             </if>
+             <if test="salt != null and salt != ''">
+                 AND u.salt = #{salt}
+             </if>
+             <if test="deptId != null and deptId != ''">
+                 AND u.dept_id = #{deptId}
+             </if>
+         </where>
+    </select>
 </mapper> 
