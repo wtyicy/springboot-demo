@@ -1,14 +1,14 @@
 server:
-  port: 8001 #ÅäÖÃ¶Ë¿Ú
+  port: 8001 #ç«¯å£å·
   servlet:
-    context-path: /helloworld #ÅäÖÃ·ÃÎÊÂ·¾¶
+    context-path: /helloworld #è®¿é—®è·¯å¾„
 
-# ÈÈ²¿Êğ
-#£¨1£©File-Settings-Compiler-Build Project automatically
-#£¨2£©ctrl + shift + alt + /,Ñ¡ÔñRegistry,¹´ÉÏ Compiler autoMake allow when app running
+# çƒ­éƒ¨ç½²
+# 1ã€File-Settings-Compiler-Build Project automatically
+# 2ã€ctrl + shift + alt + /,1ã€Registry,2ã€Compiler autoMake allow when app running
 spring:
   devtools:
     restart:
-      enabled: true #ÈÈ²¿ÊğÉúĞ§
-      additional-paths: src/main/java #ÉèÖÃĞŞ¸ÄÖØÆôµÄÄ¿Â¼
+      enabled: true #æ˜¯å¦å¼€å¯çƒ­éƒ¨ç½²
+      additional-paths: src/main/java # ä¿®æ”¹é‚£ä¸ªç›®å½•ä¸‹çš„æ–‡ä»¶
 

@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/springboot-hellowolrd" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-hellowolrd/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-hellowolrd/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-hellowolrd/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-jdbc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-jdbc/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-jdbc/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-jdbc/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-jpa/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-jpa/src/main/resources/application.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-jpa/src/main/resources/sql/springboot_jpa.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-jpa/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-jpa/src/main/resources/sql/springboot_jpa.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mybatis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-mybatis/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-mybatis/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mysql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-mysql/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-mysql/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-mysql/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-redis/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-dev.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-prod.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-test.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-dev.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-prod.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application-test.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-redis/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-shiro" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-dev.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-prod.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-test.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/sql/springboot_shiro.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-dev.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-prod.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application-test.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/sql/springboot_shiro.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-shiro/src/main/resources/static/img/login_back.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-dev.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-prod.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application.yml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/static/axios/axios.min.js" charset="GBK" />
-    <file url="PROJECT" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-dev.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application-prod.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-thymeleaf/src/main/resources/static/axios/axios.min.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

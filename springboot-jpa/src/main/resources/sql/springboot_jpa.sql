@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.09 (64 bit)
 MySQL - 5.7.28-log : Database - springboot_jpa
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 

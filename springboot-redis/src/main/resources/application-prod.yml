@@ -21,14 +21,14 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
   redis:
-    database: 0 # RedisÊı¾İ¿âË÷Òı
-    host: 127.0.0.1 # ·şÎñÆ÷µØÖ·
-    port: 6379 # ·şÎñÆ÷Á¬½Ó¶Ë¿Ú
-    password:  # ·şÎñÆ÷Á¬½ÓÃÜÂë
-    timeout: 1000 # Á¬½Ó³¬Ê±Ê±¼ä
+    database: 0 # redisç´¢å¼•åº“
+    host: 127.0.0.1 # æœåŠ¡å™¨åœ°å€
+    port: 6379 # ç«¯å£
+    password:  #  å¯†ç 
+    timeout: 1000 # è¶…æ—¶æ—¶é—´
     jedis:
       pool:
-        max-active: 200 # Á¬½Ó³Ø×î´óÁ¬½ÓÊı
-        max-idle: 10 # Á¬½Ó³Ø×î´óµÄ¿ÕÏĞÁ¬½Ó
-        max-wait: -1 # Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä
-        min-idle: 0 # Á¬½Ó³Ø×îĞ¡¿ÕÏĞÁ¬½Ó
+        max-active: 200 # è¿æ¥æ•°é‡
+        max-idle: 10 # æœ€å¤§ç©ºé—²è¿æ¥
+        max-wait: -1 # æœ€å¤§ç­‰å¾…æ—¶é—´
+        min-idle: 0 # æœ€å°ç©ºé—²è¿æ¥
